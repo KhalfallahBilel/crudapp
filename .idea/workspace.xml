@@ -28,6 +28,9 @@
     <expand />
     <select />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
@@ -138,6 +141,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1QmTGWzGRPe3XNN4EDm3glnh2GW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -166,11 +170,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568374679065</updated>
-      <workItem from="1568374694912" duration="8584000" />
+      <workItem from="1568374694912" duration="8944000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
