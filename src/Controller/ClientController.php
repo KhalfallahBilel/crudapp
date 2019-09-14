@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\Client;
+use App\Repository\ClientRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,11 +10,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class ClientController extends AbstractController {
 
     /**
+     * @var ClientRepository
+     */
+    private $repository;
+
+    public function __construct(ClientRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+
+    /**
      * @Route("/Clients",name="client.index")
      * @return Response
      */
     public function index():Response{
-        $client = new Client();
+        /*$client = new Client();
         $client->setSiret('123456789zzz')
                ->setCompanyName('sii')
                ->setAddress('219 rue albert caquot valbonne')
@@ -25,7 +37,8 @@ class ClientController extends AbstractController {
             ->setDescription('lorum ipsum');
         $em = $this->getDoctrine()->getManager();
         $em->persist($client);
-        $em->flush();
+        $em->flush();*/
+        $this->repository->findAll();
         return $this->render('clients/index.html.twig',[
             'current_menu' => 'clients'
         ]);
