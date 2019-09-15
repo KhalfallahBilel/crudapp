@@ -189,7 +189,7 @@ class Client
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setCreatedAt(\DateTimeInterface $created_at): datet
     {
         $this->created_at = $created_at;
 

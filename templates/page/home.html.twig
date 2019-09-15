@@ -1,12 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Tous nos Clients' %}
+{% block title 'Clients' %}
 
 
 
 {% block body %}
-    <div class="jubotron text-center">
-        <h1>Tous nos Clients</h1>
-        <p>lorum</p>
+    <div class="jubotron text-center mt-4">
+        <h1>Liste des Clients</h1>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Siret</th>
+    {#                    <th scope="col">Raison sociale</th>#}
+                        <th scope="col">Adresse</th>
+                        <th scope="col">Tel</th>
+                        <th scope="col">Fax</th>
+    {#                    <th scope="col">Description</th>#}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                        <tr>
+                            <th scope="row">{{client.id}}</th>
+                            <td>{{ client.siret }}</td>
+                            {#                    <td>{{ client.company_name }}</td>#}
+                            <td>{{ client.address }}</td>
+                            <td>{{ client.tel }}</td>
+                            <td>{{ client.fax }}</td>
+                            {#                    <td>{{ client.description }}</td>#}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

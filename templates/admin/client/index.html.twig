@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Gérer les clients' %}
+
+
+
+{% block body %}
+    <div class="jubotron text-center mt-4">
+        <h1>Liste des Clients</h1>
+
+        <div class="container">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Siret</th>
+                            {#                    <th scope="col">Raison Sociale</th>#}
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for client in clients %}
+                            <tr>
+                                <th scope="row">{{client.id}}</th>
+                                <td>{{ client.siret }}</td>
+                                {#                    <td>{{ client.company_name }}</td>#}
+                                <td>
+                                    <a href="{{ path('admin.client.edit', {'id': client.id}) }}" class="btn btn-secondary">Editer</a>
+                                    <form method="post" action="{{ path('admin.client.delete', {id:client.id}) }}"
+                                          style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sûre !!')">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ client.id) }}">
+                                        <button class="btn btn-danger">Supprimer</button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <a href="{{ path('admin.client.new') }}" class="btn btn-primary">Créer un nouveau client</a>
+                </div>
+
+        </div>
+    </div>
+{% endblock %}
