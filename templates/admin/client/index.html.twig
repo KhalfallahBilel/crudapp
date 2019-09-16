@@ -33,8 +33,8 @@
                                     <a href="{{ path('admin.client.edit', {'id': client.id}) }}" class="btn btn-secondary">Editer</a>
                                     <form method="post" action="{{ path('admin.client.delete', {id:client.id}) }}"
                                           style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sûre !!')">
-                                        {#<input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ client.id) }}">#}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ client.id) }}">
                                         <button class="btn btn-danger">Supprimer</button>
                                     </form>
                                 </td>

@@ -86,11 +86,11 @@ class AdminClientController extends AbstractController{
      * @return RedirectResponse
      */
     public function delete(Client $client, Request $request){
-//        if($this->isCsrfTokenValid('delete' , $client->getId(), $request->get('_token'))){
+        if($this->isCsrfTokenValid('delete' . $client->getId(), $request->get('_token'))){
             $this->em->remove($client);
             $this->em->flush();
             $this->addFlash('success','Client supprimer avec succés');
-//        }
+       }
         return $this->redirectToRoute('admin.client.index');
     }
 

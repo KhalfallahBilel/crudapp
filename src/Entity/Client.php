@@ -24,7 +24,7 @@ class Client
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $company_name;
+    private $company;
 
     /**
      * @ORM\Column(type="text")

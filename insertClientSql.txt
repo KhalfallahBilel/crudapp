@@ -1,0 +1,1 @@
+INSERT INTO `client`(`id`, `siret`, `company`, `address`, `tel`, `fax`, `manager`, `ape_code`, `activity`, `description`, `created_at`) VALUES ('1','123456789zzz','sii','219 rue albert caquot valbonne','123245','125487','thierry','1254klhg','Société de service informatique','lorum ipsum','2008-11-11 13:23:44')
